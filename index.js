@@ -30,8 +30,8 @@ app.get('/', function(req, res){
 app.post('/api/SLM', function (req, res) {
 	let database = `SLM`
     const SL = req.query.SLM;
-    const timestamp = new Date(Date.now());
-	timestamp = timestamp.toString();
+    const timestamp = new Date();
+
     const SLRecord = {
         SL: SL,
         timestamp: timestamp
