@@ -59,4 +59,4 @@ jobs:
           app-name: 'slmap'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_61676805C6144E8287C9564A8EA88896 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2C4C1C359A014F668E856A3E89C97075 }}
