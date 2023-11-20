@@ -42,7 +42,6 @@ app.post('/api/SLM', function (req, res) {
     const points =
     [
         Point.measurement("SL")
-	    .setTag("Mtime", T)
             .setIntegerField("SLV", SL)
     ];
     for (let i = 0; i < points.length; i++) {
