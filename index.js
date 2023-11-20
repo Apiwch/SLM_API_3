@@ -42,7 +42,7 @@ app.post('/api/SLM', function (req, res) {
     const points =
     [
         Point.measurement("SL")
-            .setIntegerField("SLV", SL)
+            .setFloatField("SLV", SL)
     ];
     for (let i = 0; i < points.length; i++) {
         const point = points[i];
