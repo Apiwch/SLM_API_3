@@ -19,7 +19,6 @@ const client = new InfluxDBClient({host: 'https://us-east-1-1.aws.cloud2.influxd
 
 
 
-
 let data = [];
 
 app.get('/', function(req, res){
