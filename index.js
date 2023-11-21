@@ -84,6 +84,8 @@ app.get('/api/His', function (req, res){
     }
     
     main()
+    
+});
 
 app.listen(app.get('port'), function () {
   console.log('run at port', app.get('port'))
