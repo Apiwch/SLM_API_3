@@ -15,8 +15,6 @@ const token = 'z-UccinXjSvvmdbLTEBAYTQp9nErpJVOLajQU7zgqlZgNwJUPaZOAUgYw55RoTa3v
 
 const client = new InfluxDBClient({host: 'https://eu-central-1-1.aws.cloud2.influxdata.com', token: token})
 
-
-
 let data = [];
 
 app.get('/', function(req, res){
