@@ -66,7 +66,7 @@ app.get('/api/His', function (req, res){
         const query = `SELECT *
         FROM "SL"
         WHERE
-        time >= timestamp '${dateNow}T01:00:00.000Z' AND time <= timestamp '${dateNow}T13:00:00.000Z'`;
+        time >= timestamp '${dateNow}T03:00:00.000Z' AND time <= timestamp '${dateNow}T15:00:00.000Z'`;
         const rows = await client.query(query, 'SLM');
 
         for await (const row of rows) {
