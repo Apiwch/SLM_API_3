@@ -11,9 +11,9 @@ app.set('port', (process.env.PORT || 4000))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
-const token = 'Rz2iF__PeVlbHlL1fGtYzc6UiKWCFOlE6oZwsfmDF93K4uOlK89EDvGL5tr-sWSs4Xe_Zz0ebGu_jNokeKV5YA==';
+const token = 'z-UccinXjSvvmdbLTEBAYTQp9nErpJVOLajQU7zgqlZgNwJUPaZOAUgYw55RoTa3vPmQ_x9eVFzSmCCxXl6QZA==';
 
-const client = new InfluxDBClient({host: 'https://us-east-1-1.aws.cloud2.influxdata.com', token: token})
+const client = new InfluxDBClient({host: 'https://eu-central-1-1.aws.cloud2.influxdata.com', token: token})
 
 
 
