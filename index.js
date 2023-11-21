@@ -70,7 +70,7 @@ app.get('/api/His', function (req, res){
             
             var SlvHis ={
                 SlvH: ants.toString(),
-                timeH: time.toLocaleTimeString('en-GB'),
+                timeH: time.toLocaleTimeString('en-GB'{ timeZone: 'Asia/Bangkok' }),
             } 
             data.push(SlvHis);
         }
