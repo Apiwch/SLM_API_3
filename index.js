@@ -60,33 +60,33 @@ app.get('/api/SLM', function (req, res) {
     res.json(data);
 });
 
-app.get('/api/His', function (req, res){
-    let dateNow = new Date().toISOString().split('T')[0];
-    var data = [];
-    async function main() {
-        const query = `SELECT *
-        FROM "SL"
-        WHERE
-        time >= timestamp '${dateNow}T01:00:00.000Z' AND time <= timestamp '${dateNow}T13:00:00.000Z'`;
-        const rows = await client.query(query, 'SLM');
+// app.get('/api/His', function (req, res){
+//     let dateNow = new Date().toISOString().split('T')[0];
+//     var data = [];
+//     async function main() {
+//         const query = `SELECT *
+//         FROM "SL"
+//         WHERE
+//         time >= timestamp '${dateNow}T01:00:00.000Z' AND time <= timestamp '${dateNow}T13:00:00.000Z'`;
+//         const rows = await client.query(query, 'SLM');
 
-        for await (const row of rows) {
-            let ants = row.SLV || '';
-            let time = new Date(row.time);
+//         for await (const row of rows) {
+//             let ants = row.SLV || '';
+//             let time = new Date(row.time);
             
-            var SlvHis ={
-                SlvH: ants.toString(),
-                timeH: time.toLocaleTimeString('en-GB'),
-            } 
-            data.push(SlvHis);
-        }
+//             var SlvHis ={
+//                 SlvH: ants.toString(),
+//                 timeH: time.toLocaleTimeString('en-GB'),
+//             } 
+//             data.push(SlvHis);
+//         }
 
-        res.json(data);
-    }
+//         res.json(data);
+//     }
     
-    main()
+//     main()
     
-});
+// });
 
 app.listen(app.get('port'), function () {
   console.log('run at port', app.get('port'))
