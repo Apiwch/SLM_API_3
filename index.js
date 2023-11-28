@@ -82,6 +82,34 @@ app.get('/api/His', function (req, res){
     
 });
 
+app.get('/api/PHis', function (req, res){
+    let dateNow = new Date().toISOString().split('T')[0];
+    var data = [];
+    async function main() {
+        const query = `SELECT *
+        FROM "_pepole"
+        WHERE
+        time >= timestamp '${dateNow}T03:00:00.000Z' AND time <= timestamp '${dateNow}T15:00:00.000Z'`;
+        const rows = await client.query(query, 'pepole');
+
+        for await (const row of rows) {
+            let counts = row.count || '';
+            let time = new Date(row.time);
+            
+            var PHis ={
+                PH: counts.toString(),
+                timeH: time,
+            } 
+            data.push(PHis);
+        }
+
+        res.json(data);
+    }
+    
+    main()
+    
+});
+
 app.listen(app.get('port'), function () {
   console.log('run at port', app.get('port'))
 })
